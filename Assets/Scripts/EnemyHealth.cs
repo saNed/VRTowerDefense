@@ -21,3 +21,6 @@ public class EnemyHealth : MonoBehaviour
 		}
 	}
 }
+
+/// Tutorial I was referencing
+/// https://unity3d.com/learn/tutorials/projects/survival-shooter/harming-enemies?playlist=17144
