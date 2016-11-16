@@ -33,6 +33,12 @@ public class RangeChecker : MonoBehaviour {
 	}
 
 	public List<GameObject> GetValidTargets() {
+		//Checks whether any target was destroyed before sending
+		for (int i = 0; i < m_targets.Count; i++) {
+			if (m_targets [i] == null) {
+				m_targets.RemoveAt(i);
+			}
+		}
 		return m_targets;
 	}
 

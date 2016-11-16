@@ -7,11 +7,13 @@ public class TrackingProjectile : BaseProjectile {
 	// Update is called once per frame
 	void Update () {
 		if (m_target) {
-			transform.position = Vector3.MoveTowards(transform.position, m_target.transform.position, speed * Time.deltaTime);
-		}
+			transform.position = Vector3.MoveTowards (transform.position, m_target.transform.position, speed * Time.deltaTime);
+		} else
+			Destroy (gameObject);
 	}
 
-	public override void fireProjectile (GameObject launcher, GameObject target, int damage) {
+	public override void fireProjectile (GameObject launcher, GameObject target, int _damage) {
+		damage = _damage;
 		if (target) {
 			m_target = target;
 		}

@@ -13,7 +13,8 @@ public class BeamProjectile : BaseProjectile {
 		}
 	}
 
-	public override void fireProjectile (GameObject launcher, GameObject target, int damage) {
+	public override void fireProjectile (GameObject launcher, GameObject target, int _damage) {
+		damage = _damage;
 		if (launcher) {
 			m_launcher = launcher;
 			transform.SetParent (m_launcher.transform);
