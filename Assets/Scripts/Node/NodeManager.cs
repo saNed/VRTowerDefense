@@ -13,7 +13,7 @@ public class NodeManager : MonoBehaviour {
 				GameObject n = (GameObject) Instantiate(node, new Vector3 (i, 0, j), Quaternion.identity, this.transform);
 				n.name = i + " x " + j;
 
-				GameObject nr = (GameObject) Instantiate (nodeRenderer, new Vector3 (i, 0, j), Quaternion.identity, n.transform);
+				GameObject nr = (GameObject) Instantiate (nodeRenderer, new Vector3 (i, nodeRenderer.transform.position.y, j), Quaternion.identity, n.transform);
 			}
 		}
 	}
