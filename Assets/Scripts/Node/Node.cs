@@ -28,6 +28,8 @@ public class Node : MonoBehaviour {
 			return;
 		}
 
+		Debug.Log ("Place turret at: " + this.gameObject.transform.parent.name);
+
 		GameObject tower = buildManager.GetTurretToBuild ();
 		turret = (GameObject)Instantiate (tower, transform.position, Quaternion.identity, this.transform.parent);
 	}

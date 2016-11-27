@@ -3,13 +3,26 @@ using System.Collections;
 
 public class EnemyMovement : MonoBehaviour
 {
-	public Transform pointA;
-	public Transform pointB;
+	EnemyHealth enemyHealth;
+	private Rigidbody rbody;
 	public float speed;
+	public Vector3 movement;
+	private float lastMove = -1f;
 
-	void Update ()
+	void Awake ()
 	{
-		transform.position = Vector3.Lerp (pointA.position, pointB.position, Mathf.Sin (Time.time * speed));
+		enemyHealth = GetComponent <EnemyHealth> ();
+		rbody = GetComponent <Rigidbody> ();
+	}
+
+
+	void FixedUpdate ()
+	{
+		if (Time.time - lastMove > 1) {
+			movement = new Vector3 (Random.Range (-1f, 1f), 0, Random.Range (-1f, 1f));
+			lastMove = Time.time;
+		}
+		rbody.velocity = movement * speed;
 
 	}
 }
