@@ -7,6 +7,7 @@ public class BuildManager : MonoBehaviour {
 	public GameObject standardTurretPrefab;
 	public GameObject wallPrefab;
 	public GameObject heavyTurretPrefab;
+	PlayerStats playerStats;
 
 	private TowerBlueprint turretToBuild;
 
@@ -17,6 +18,10 @@ public class BuildManager : MonoBehaviour {
 			return;
 		}
 		instance = this;
+	}
+
+	void Start() {
+		playerStats = PlayerStats.instance;
 	}
 
 //	public GameObject GetTurretToBuild()
@@ -36,7 +41,9 @@ public class BuildManager : MonoBehaviour {
 			return;
 		}
 
-		PlayerStats.Gold -= turretToBuild.cost; 
+		//PlayerStats.Gold -= turretToBuild.cost; 
+		playerStats.addGold (-turretToBuild.cost);
+
 
 		GameObject tower = (GameObject)Instantiate (turretToBuild.prefab, node.transform.position, Quaternion.identity);
 		node.turret = tower;
