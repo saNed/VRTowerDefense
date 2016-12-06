@@ -2,6 +2,10 @@
 
 public class Shop : MonoBehaviour {
 
+	public TowerBlueprint standardTurret;
+	public TowerBlueprint heavyTurret;
+	public TowerBlueprint wall;
+
 	BuildManager buildManager;
 
 	void Start()
@@ -9,16 +13,24 @@ public class Shop : MonoBehaviour {
 		buildManager = BuildManager.instance; 
 	}
 
+
+
 	public void PurchaseStandardTurret()
 	{
 		Debug.Log ("Standard Turret Selected");
-		buildManager.SetTurretToBuild (buildManager.standardTurretPrefab);
+		buildManager.SetTurretToBuild (standardTurret);
+	}
+
+	public void PurchaseHeavyTurret()
+	{
+		Debug.Log ("Standard Turret Selected");
+		buildManager.SetTurretToBuild (heavyTurret);
 	}
 
 	public void PurchaseWall()
 	{
 		Debug.Log ("Wall Selected");
-		buildManager.SetTurretToBuild (buildManager.wallPrefab);
+		buildManager.SetTurretToBuild (wall);
 	}
 
 	public void Deselect()

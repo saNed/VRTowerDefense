@@ -1,14 +1,16 @@
-﻿//https://www.youtube.com/watch?v=t7GuWvP_IEQ&list=PLPV2KyIb3jR4u5jX8za5iU1cqnQPmbzG0&index=6
+﻿ //https://www.youtube.com/watch?v=t7GuWvP_IEQ&list=PLPV2KyIb3jR4u5jX8za5iU1cqnQPmbzG0&index=6
 using UnityEngine;
 using System.Collections;
 
 public class Node : MonoBehaviour {
 
 	public Color hoverColor;
+//	Vector3 positionOffset;
 
 	private Renderer rend;
 	private Color startColor;
-	private GameObject turret;
+
+	public GameObject turret;
 
 	BuildManager buildManager;
 
@@ -17,10 +19,15 @@ public class Node : MonoBehaviour {
 		startColor = rend.material.color;
 		buildManager = BuildManager.instance;
 	}
+
+//	public Vector3 getPosition () {
+//		return transform.position;
+////		+ positionOffset;
+//	}
 		
 	void OnMouseDown ()
 	{
-		if (buildManager.GetTurretToBuild () == null)
+		if (!buildManager.canBuild)
 			return;
 			
 		if (turret != null) {
@@ -30,13 +37,13 @@ public class Node : MonoBehaviour {
 
 		Debug.Log ("Place turret at: " + this.gameObject.transform.parent.name);
 
-		GameObject tower = buildManager.GetTurretToBuild ();
-		turret = (GameObject)Instantiate (tower, transform.position, Quaternion.identity, this.transform.parent);
+		buildManager.buildTurretOn (this);
+
 	}
 
 	void OnMouseEnter ()
 	{
-		if (buildManager.GetTurretToBuild () == null)
+		if (!buildManager.canBuild)
 			return;
 		rend.material.color = hoverColor;
 	}
