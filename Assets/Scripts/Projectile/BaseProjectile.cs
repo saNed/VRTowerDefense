@@ -8,6 +8,8 @@ public abstract class BaseProjectile : MonoBehaviour {
 
 	public abstract void fireProjectile (GameObject launcher, GameObject target, int _damage);
 
+	public abstract void fireProjectile2 (GameObject launcher, int _damage);
+
 	public void OnCollisionEnter (Collision coll)
 	{
 		if(coll.gameObject.tag == "Enemy")

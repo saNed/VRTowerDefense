@@ -5,6 +5,7 @@ public class NodeManager : MonoBehaviour {
 
 	public GameObject node;
 	public GameObject nodeRenderer;
+	public GameObject playerBase;
 
 	// Use this for initialization
 	void Start () {
@@ -14,6 +15,9 @@ public class NodeManager : MonoBehaviour {
 				n.name = i + " x " + j;
 
 				GameObject nr = (GameObject) Instantiate (nodeRenderer, new Vector3 (i, nodeRenderer.transform.position.y, j), Quaternion.identity, n.transform);
+				if ((i == 7 || i == -7) && (j == 7 || j == -7)) {
+					Instantiate(playerBase, n.transform.position, n.transform.rotation, n.transform);
+				}
 			}
 		}
 	}

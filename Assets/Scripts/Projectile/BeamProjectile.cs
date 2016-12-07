@@ -20,4 +20,9 @@ public class BeamProjectile : BaseProjectile {
 			transform.SetParent (m_launcher.transform);
 		}
 	}
+
+	public override void fireProjectile2(GameObject launcher, int _damage)
+	{
+		Debug.LogError("Exception: This function has not been implemented yet, ya GOOFBALL!");
+	}
 }

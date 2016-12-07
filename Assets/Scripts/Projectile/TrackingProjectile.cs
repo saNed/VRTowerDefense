@@ -18,4 +18,8 @@ public class TrackingProjectile : BaseProjectile {
 			m_target = target;
 		}
 	}
+
+	public override void fireProjectile2(GameObject launcher, int _damage) {
+		Debug.LogError("Exception: Puny Human function not found!");
+	}
 }
