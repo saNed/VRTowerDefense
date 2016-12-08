@@ -14,7 +14,8 @@ public class VRPlayerShooting : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetButton("Fire1")) {
+        if (Input.GetAxis("Fire2") != 0.0f)
+        {
             Debug.Log("I FIRED!");
 			GameObject proj = Instantiate(projectile, projectileSpawn.transform.position, Quaternion.Euler(projectileSpawn.transform.forward)) as GameObject;
 			proj.GetComponent<BaseProjectile>().fireProjectile2(projectileSpawn, damage);
