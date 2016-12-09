@@ -13,8 +13,6 @@ public class VRPlayerMovement : NetworkBehaviour {
     public Vector3[] positions;
     public Vector3[] rotations;
     public int index;
-    private NetworkClient client;
-    private bool setupReceiver = false;
 
 	// Use this for initialization
 	void Start () {
@@ -31,8 +29,6 @@ public class VRPlayerMovement : NetworkBehaviour {
         rotations[3] = new Vector3(0.0f, 135.0f, 0.0f);
 
         //this.gameObject.transform.position = positions[0];
-        
-        client = VRTDNetworkManager.singleton.client;
 
     }
 
@@ -41,13 +37,6 @@ public class VRPlayerMovement : NetworkBehaviour {
 	void Update () {
         if (isServer)
         {
-            if(!setupReceiver)
-            {
-                client = VRTDNetworkManager.singleton.client;
-                NetworkServer.RegisterHandler(msgID, updatePlayer);
-                Debug.LogError("CUNT");
-                setupReceiver = true;
-            }
             return;
         }
         if (Input.GetButtonDown("LeftMovement"))
@@ -83,15 +72,5 @@ public class VRPlayerMovement : NetworkBehaviour {
                 transform.rotation = Quaternion.Euler(rotations[index]);
             }
         }
-
-        VRMessage msg = new VRMessage();
-        msg.rot = transform.rotation;
-        client.Send(msgID, msg);
-    }
-
-    private void updatePlayer(NetworkMessage msg)
-    {
-        transform.rotation = msg.ReadMessage<VRMessage>().rot;
-        Debug.LogError("FUCK" + msg.ReadMessage<VRMessage>().rot);
     }
 }
