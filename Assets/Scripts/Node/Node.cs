@@ -1,4 +1,4 @@
-﻿ //https://www.youtube.com/watch?v=t7GuWvP_IEQ&list=PLPV2KyIb3jR4u5jX8za5iU1cqnQPmbzG0&index=6
+﻿//https://www.youtube.com/watch?v=t7GuWvP_IEQ&list=PLPV2KyIb3jR4u5jX8za5iU1cqnQPmbzG0&index=6
 using UnityEngine;
 using System.Collections;
 
@@ -12,7 +12,7 @@ public class Node : MonoBehaviour {
 
 	public GameObject turret;
 
-	BuildManager buildManager;
+    BuildManager buildManager;
 
 	void Start () {
 		rend = GetComponent<Renderer> ();
@@ -43,8 +43,8 @@ public class Node : MonoBehaviour {
 
 	void OnMouseEnter ()
 	{
-		if (!buildManager.canBuild)
-			return;
+        if (!buildManager.canBuild)
+            return;
 		rend.material.color = hoverColor;
 	}
 

@@ -1,0 +1,42 @@
+Mono path[0] = 'C:/Users/nilo_/Desktop/VRTowerDefense-master/VRTOWER_Data/Managed'
+Mono path[1] = 'C:/Users/nilo_/Desktop/VRTowerDefense-master/VRTOWER_Data/Mono'
+Mono config path = 'C:/Users/nilo_/Desktop/VRTowerDefense-master/VRTOWER_Data/Mono/etc'
+PlayerConnection initialized from C:/Users/nilo_/Desktop/VRTowerDefense-master/VRTOWER_Data (debug = 0)
+PlayerConnection initialized network socket : 0.0.0.0 55100
+Multi-casting "[IP] 10.147.171.159 [Port] 55100 [Flags] 3 [Guid] 2413682026 [EditorId] 3149896478 [Version] 1048832 [Id] WindowsPlayer(DESKTOP-AGTACE1) [Debug] 1" to [225.0.0.222:54997]...
+Waiting for connection from host on [0.0.0.0:55100]...
+PlayerConnection accepted from [10.147.171.159] handle:0x2fc
+Started listening to [0.0.0.0:55100]
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,defer=y,address=0.0.0.0:56026
+PlayerConnection already initialized - listening to [0.0.0.0:55100]
+Initialize engine version: 5.5.0f3 (38b4efef76f0)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 1070 (ID=0x1b81)
+    Vendor:   NVIDIA
+    VRAM:     8145 MB
+    Driver:   21.21.13.7290
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\nilo_\Desktop\VRTowerDefense-master\VRTOWER_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\nilo_\Desktop\VRTowerDefense-master\VRTOWER_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\nilo_\Desktop\VRTowerDefense-master\VRTOWER_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\nilo_\Desktop\VRTowerDefense-master\VRTOWER_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\nilo_\Desktop\VRTowerDefense-master\VRTOWER_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\nilo_\Desktop\VRTowerDefense-master\VRTOWER_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\nilo_\Desktop\VRTowerDefense-master\VRTOWER_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\nilo_\Desktop\VRTowerDefense-master\VRTOWER_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\nilo_\Desktop\VRTowerDefense-master\VRTOWER_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
+Loading C:\Users\nilo_\Desktop\VRTowerDefense-master\VRTOWER_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
+Platform assembly: C:\Users\nilo_\Desktop\VRTowerDefense-master\VRTOWER_Data\Managed\UnityEngine.VR.dll (this message is harmless)
+Loading C:\Users\nilo_\Desktop\VRTowerDefense-master\VRTOWER_Data\Managed\UnityEngine.VR.dll into Unity Child Domain
+- Completed reload, in  0.131 seconds
+Platform assembly: C:\Users\nilo_\Desktop\VRTowerDefense-master\VRTOWER_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\nilo_\Desktop\VRTowerDefense-master\VRTOWER_Data\Managed\System.dll (this message is harmless)
+desktop: 1280x1024 60Hz; virtual: 1280x1024 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+Overlay is using an unsupported compressed pixel format.UnloadTime: 1.072217 ms
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: a00 -> priority: 1 

@@ -2,8 +2,8 @@
 using System.Collections;
 
 public class BuildManager : MonoBehaviour {
+    public static BuildManager instance;
 
-	public static BuildManager instance;
 	public GameObject standardTurretPrefab;
 	public GameObject wallPrefab;
 	public GameObject heavyTurretPrefab;
