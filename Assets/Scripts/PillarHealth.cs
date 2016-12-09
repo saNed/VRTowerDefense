@@ -1,13 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class PillarHealth : MonoBehaviour {
 
 	public static int liveTowers = 4;
 	public int startingHealth = 100;
 	public int currentHealth;
+    public Text gameOverText;
 
-	void Start () {
+    void Start () {
 		currentHealth = startingHealth;
 	}
 
@@ -28,6 +30,8 @@ public class PillarHealth : MonoBehaviour {
 			Destroy (gameObject);
 			if (liveTowers == 0) {
 				Time.timeScale = 0.0f;
+                gameOverText.GetComponent<Text>().enabled = true;
+          
 			}
 		}
 	}
