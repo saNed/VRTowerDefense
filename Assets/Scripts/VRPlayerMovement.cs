@@ -35,10 +35,6 @@ public class VRPlayerMovement : NetworkBehaviour {
     const short msgID = 777;
 	// Update is called once per frame
 	void Update () {
-        if (isServer)
-        {
-            return;
-        }
         if (Input.GetButtonDown("LeftMovement"))
         {
             Debug.Log("I MOVED LEFT!");
