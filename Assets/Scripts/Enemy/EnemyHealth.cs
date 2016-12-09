@@ -24,7 +24,7 @@ public class EnemyHealth : MonoBehaviour
 
 		if(currentHealth <= 0)
 		{
-			playerStats.addGold(100);
+			playerStats.addGold(30);
 			Destroy (gameObject);
 		}
 	}
