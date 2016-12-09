@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Networking;
 
-public class BuildManager : MonoBehaviour {
+public class BuildManager : NetworkBehaviour {
     public static BuildManager instance;
 
 	public GameObject standardTurretPrefab;
@@ -47,7 +48,8 @@ public class BuildManager : MonoBehaviour {
 
 		GameObject tower = (GameObject)Instantiate (turretToBuild.prefab, node.transform.position, Quaternion.identity);
 		node.turret = tower;
+        NetworkServer.Spawn(tower);
 
-		Debug.Log ("Gold left: " + PlayerStats.Gold);
+        Debug.Log ("Gold left: " + PlayerStats.Gold);
 	}
 }
