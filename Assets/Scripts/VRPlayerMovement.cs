@@ -1,11 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Networking;
+using System;
 
-public class VRPlayerMovement : MonoBehaviour {
+class VRMessage : MessageBase
+{
+    public Quaternion rot;
+}
+
+public class VRPlayerMovement : NetworkBehaviour {
 
     public Vector3[] positions;
     public Vector3[] rotations;
     public int index;
+    private NetworkClient client;
+    private bool setupReceiver = false;
 
 	// Use this for initialization
 	void Start () {
@@ -22,11 +31,25 @@ public class VRPlayerMovement : MonoBehaviour {
         rotations[3] = new Vector3(0.0f, 135.0f, 0.0f);
 
         //this.gameObject.transform.position = positions[0];
+        
+        client = VRTDNetworkManager.singleton.client;
 
     }
-	
+
+    const short msgID = 777;
 	// Update is called once per frame
 	void Update () {
+        if (isServer)
+        {
+            if(!setupReceiver)
+            {
+                client = VRTDNetworkManager.singleton.client;
+                NetworkServer.RegisterHandler(msgID, updatePlayer);
+                Debug.LogError("CUNT");
+                setupReceiver = true;
+            }
+            return;
+        }
         if (Input.GetButtonDown("LeftMovement"))
         {
             Debug.Log("I MOVED LEFT!");
@@ -61,5 +84,14 @@ public class VRPlayerMovement : MonoBehaviour {
             }
         }
 
+        VRMessage msg = new VRMessage();
+        msg.rot = transform.rotation;
+        client.Send(msgID, msg);
+    }
+
+    private void updatePlayer(NetworkMessage msg)
+    {
+        transform.rotation = msg.ReadMessage<VRMessage>().rot;
+        Debug.LogError("FUCK" + msg.ReadMessage<VRMessage>().rot);
     }
 }
