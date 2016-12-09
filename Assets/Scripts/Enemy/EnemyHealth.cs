@@ -2,8 +2,8 @@
 
 public class EnemyHealth : MonoBehaviour
 {
-	public int startingHealth = 100;
-	public int currentHealth;
+	public double startingHealth = 100;
+	public double currentHealth;
 
 	PlayerStats playerStats;
 
@@ -13,7 +13,8 @@ public class EnemyHealth : MonoBehaviour
 
 	void Awake ()
 	{
-		currentHealth = startingHealth;
+        Debug.Log(startingHealth + .5 * Time.timeSinceLevelLoad);
+		currentHealth = startingHealth + .5 * Time.timeSinceLevelLoad;
 	}
 		
 	public void TakeDamage (int amount)
